@@ -45,13 +45,14 @@ public class LinkedList
         }
 
         /* Searching the Linked List for the key  */
-        while(temp != null)
+        while(temp.next != null)
         {
             if(temp.data == key)
             {
-                prev = temp;
-                temp = temp.next;
+                break;      
             }
+            prev = temp;
+            temp = temp.next;
         }
 
         /* Key not found in the Linked List */
@@ -87,11 +88,28 @@ public class LinkedList
         llist.print_nodes(); 
         
         /* Deleting node with value 2 */
-        System.out.println("\nDeleting node with value 2");
+        System.out.println("\nDeleting node with value 2\n");
         llist.delete_node(2);
+        
+        /* After Deleting */
+        System.out.println("After Deleting");
+        llist.print_nodes(); 
 
     }
 }
 
 
+/* Output
+   
+Before Deleting
+Node 1 value => 1
+Node 2 value => 2
+Node 3 value => 3
 
+Deleting node with value 2
+
+After Deleting
+Node 1 value => 1
+Node 2 value => 3
+ 
+*/
