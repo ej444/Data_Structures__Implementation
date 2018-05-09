@@ -16,6 +16,7 @@ public class LinkedList
         }
     }
 
+    
     /* Function to print all the node values of the Linked List */
     public void print_nodes()
     {
@@ -32,7 +33,9 @@ public class LinkedList
         return;
     }
 
-    public void delete_node(int key)
+    
+    /* Function to delete the node whose value == key */
+    public void delete_node_by_key(int key)
     {
         Node temp = head;
         Node prev = null;
@@ -66,7 +69,19 @@ public class LinkedList
         
         return;
     }
-
+    
+    
+    /* Function to delete the node whose position is passed in the function (starting from zero) */
+    public void delete_node_by_pos(int position)
+    {
+        if(position == null)
+        {
+            return;
+        }
+        
+        
+    }
+    
     
     public static void main(String[] args)
     {
@@ -78,6 +93,7 @@ public class LinkedList
         llist.head = new Node(1);
         Node second = new Node(2);
         Node third = new Node(3);
+        Node fourth = new Node(4);
 
         /* Connecting the nodes */
         llist.head.next = second;
@@ -89,7 +105,7 @@ public class LinkedList
         
         /* Deleting node with value 2 */
         System.out.println("\nDeleting node with value 2\n");
-        llist.delete_node(2);
+        llist.delete_node_by_key(2);
         
         /* After Deleting */
         System.out.println("After Deleting");
