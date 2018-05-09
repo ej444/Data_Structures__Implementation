@@ -47,5 +47,15 @@ public class LinkedList
         second.next = third;
              
         llist.print_nodes();
+        
+        
     }
 }
+
+/* Output
+
+Node 1 value => 1
+Node 2 value => 2
+Node 3 value => 3
+
+*/
