@@ -98,7 +98,7 @@ public class LinkedList
         Node third = new Node(3);
         
         /* Connecting the nodes */
-        head.next = second;
+        llist.head.next = second;
         second.next = third;
          
         /* Before Adding */
