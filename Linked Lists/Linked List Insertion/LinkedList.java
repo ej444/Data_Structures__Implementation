@@ -29,6 +29,8 @@ public class LinkedList
             System.out.println("Node " + i++ + " value => " + n.data);
             n = n.next;
         }
+        
+        return;
     }
     
     
@@ -37,16 +39,50 @@ public class LinkedList
     { 
         Node new_node = new Node(new_data);
         new_node.next = head;
-        head = new_node;     
+        head = new_node;  
+        
+        return;
     }
     
     
     /* Function to add the nodes after a given node */
     public void add_node_after(Node previous_node, int new_data)
     { 
+        /* Checking if the previous node exists */
+        if(previous_node == null)
+        {
+            System.out.println("Previous node cannot be null");
+        }
+        
         Node new_node = new Node(new_data);
         new_node.next = previous_node.next;
         previous_node.next = new_node;
+        
+        return;
+    }
+    
+    
+    public void add_node_end(int new_data)
+    {
+        
+        Node new_node = new Node(new_data);
+        
+        /* If the linked list is empty. */
+        if(head == null)
+        {
+            head = new_node;
+            return;
+        }
+        
+        Node last = head;
+        while(last.next != null)
+        {
+            last = last.next;
+        }
+        
+        last.next = new_node;
+        
+        return;
     }
     
     
@@ -88,7 +124,17 @@ public class LinkedList
         /* After Adding */
         System.out.println("\nAfter Adding");
         llist.print_nodes();
-             
+        
+        /* Adding 2 nodes at the end */
+        System.out.println("\nAdding 50 at the end");
+        llist.add_node_end(50);
+        System.out.println("Adding 60 at the end");
+        llist.add_node_end(60);
+        
+        /* After Adding */
+        System.out.println("\nAfter Adding");
+        llist.print_nodes();
+           
     }
 }
 
@@ -121,7 +167,21 @@ Node 3 value => 200
 Node 4 value => 10
 Node 5 value => 1
 Node 6 value => 2
-Node 7 value => 3  
+Node 7 value => 3
+
+Adding 50 at the end
+Adding 60 at the end
+
+After Adding
+Node 1 value => 7
+Node 2 value => 100
+Node 3 value => 200
+Node 4 value => 10
+Node 5 value => 1
+Node 6 value => 2
+Node 7 value => 3
+Node 8 value => 50
+Node 9 value => 60
    
      
 */
