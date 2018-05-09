@@ -40,7 +40,16 @@ public class LinkedList
         head = new_node;     
     }
     
-
+    
+    /* Function to add the nodes after a given node */
+    public void add_node_after(Node previous_node, int new_data)
+    { 
+        Node new_node = new Node(new_data);
+        new_node.next = previous_node.next;
+        previous_node.next = new_node;
+    }
+    
+    
     public static void main(String[] args)
     {
         
@@ -60,11 +69,21 @@ public class LinkedList
         System.out.println("Before Adding");
         llist.print_nodes();
         
-        /* Adding 2 nodes */
-        System.out.println("\nAdding 10");
+        /* Adding 2 nodes in the front*/
+        System.out.println("\nAdding 10 in front");
         llist.add_node_front(10);
-        System.out.println("Adding 7");
+        System.out.println("Adding 7 in front");
         llist.add_node_front(7);
+        
+        /* After Adding */
+        System.out.println("\nAfter Adding");
+        llist.print_nodes();
+        
+        /* Adding 1 node after first node & 1 node after second node */
+        System.out.println("\nAdding 100 after first node");
+        llist.add_node_after(llist.head, 100);
+        System.out.println("Adding 200 after second node");
+        llist.add_node_after(llist.head.next, 200);
         
         /* After Adding */
         System.out.println("\nAfter Adding");
@@ -82,15 +101,27 @@ Node 1 value => 1
 Node 2 value => 2
 Node 3 value => 3
 
-Adding 10
-Adding 7
+Adding 10 in front
+Adding 7 in front
 
 After Adding
 Node 1 value => 7
 Node 2 value => 10
 Node 3 value => 1
 Node 4 value => 2
-Node 5 value => 3   
+Node 5 value => 3
+
+Adding 100 after first node
+Adding 200 after second node
+
+After Adding
+Node 1 value => 7
+Node 2 value => 100
+Node 3 value => 200
+Node 4 value => 10
+Node 5 value => 1
+Node 6 value => 2
+Node 7 value => 3  
    
      
 */
