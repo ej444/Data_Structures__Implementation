@@ -15,6 +15,22 @@ public class LinkedList
             next = null;
         }
     }
+    
+    
+    /* Function to print all the node values of the Linked List */
+    public void print_nodes()
+    {
+        /* Linked List traversal */
+        Node n = head;
+        
+        int i=1;
+        while(n != null)
+        {
+            System.out.println("Node " + i++ + " value => " + n.data);
+            n = n.next;
+        }
+    }
+    
 
     public static void main(String[] args)
     {
@@ -29,6 +45,7 @@ public class LinkedList
         /* Connecting the nodes */
         llist.head.next = second;
         second.next = third;
-        
+             
+        llist.print_nodes();
     }
 }
