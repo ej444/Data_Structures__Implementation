@@ -74,12 +74,28 @@ public class LinkedList
     /* Function to delete the node whose position is passed in the function (starting from zero) */
     public void delete_node_by_pos(int position)
     {
-        if(position == null)
+        if(position == 0)
         {
+            head = head.next;
             return;
         }
         
+        int i = 0;
+        Node temp = head;
+        Node prev = null;
         
+        while(temp != null)
+        {
+            if(i == position)
+            {
+                prev.next = temp.next;
+                return;
+            }
+            prev = temp;
+            temp = temp.next;
+            i++;
+        }
+        return;
     }
     
     
@@ -94,10 +110,17 @@ public class LinkedList
         Node second = new Node(2);
         Node third = new Node(3);
         Node fourth = new Node(4);
+        Node fifth = new Node(5);
+        Node sixth = new Node(6);
+        Node seventh = new Node(7);
 
         /* Connecting the nodes */
         llist.head.next = second;
         second.next = third;
+        third.next = fourth;
+        fourth.next = fifth;
+        fifth.next = sixth;
+        sixth.next = seventh;
 
         /* Before Deleting */
         System.out.println("Before Deleting");
@@ -106,6 +129,22 @@ public class LinkedList
         /* Deleting node with value 2 */
         System.out.println("\nDeleting node with value 2\n");
         llist.delete_node_by_key(2);
+        
+        /* After Deleting */
+        System.out.println("After Deleting");
+        llist.print_nodes(); 
+        
+        /* Deleting node with position 0 */
+        System.out.println("\nDeleting node with position 0\n");
+        llist.delete_node_by_pos(0);
+        
+        /* After Deleting */
+        System.out.println("After Deleting");
+        llist.print_nodes(); 
+        
+        /* Deleting node with position 2 */
+        System.out.println("\nDeleting node with position 2\n");
+        llist.delete_node_by_pos(2);
         
         /* After Deleting */
         System.out.println("After Deleting");
@@ -121,11 +160,36 @@ Before Deleting
 Node 1 value => 1
 Node 2 value => 2
 Node 3 value => 3
+Node 4 value => 4
+Node 5 value => 5
+Node 6 value => 6
+Node 7 value => 7
 
 Deleting node with value 2
 
 After Deleting
 Node 1 value => 1
 Node 2 value => 3
+Node 3 value => 4
+Node 4 value => 5
+Node 5 value => 6
+Node 6 value => 7
+
+Deleting node with position 0
+
+After Deleting
+Node 1 value => 3
+Node 2 value => 4
+Node 3 value => 5
+Node 4 value => 6
+Node 5 value => 7
+
+Deleting node with position 2
+
+After Deleting
+Node 1 value => 3
+Node 2 value => 4
+Node 3 value => 6
+Node 4 value => 7
  
 */
