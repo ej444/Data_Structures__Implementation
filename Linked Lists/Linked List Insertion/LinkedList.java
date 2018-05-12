@@ -61,7 +61,7 @@ public class LinkedList
         return;
     }
     
-    
+    /* Function to add the nodes at the end */
     public void add_node_end(int new_data)
     {
         
