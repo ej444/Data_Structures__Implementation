@@ -25,7 +25,6 @@ public class Merge extends LinkedList
         /* Before merging */
         System.out.println("Linked List 1\n");
         llist1.print_nodes();
-        
         System.out.println("\nLinked List 2\n");
         llist2.print_nodes();        
         
