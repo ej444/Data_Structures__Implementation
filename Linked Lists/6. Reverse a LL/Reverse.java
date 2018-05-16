@@ -66,5 +66,57 @@ Node 1 value => 4
 Node 2 value => 3
 Node 3 value => 2
 Node 4 value => 1
+
+
+import java.io.*;
+
+public class Merge extends LinkedList
+{
+    public static Node reverse(Node head)
+    {
+        Node prev = null;
+        Node curr = head;
+        Node temp = null;
+        
+        while(curr != null && curr.next != null)
+        {
+            temp = curr.next;
+            curr.next = prev;
+            prev = curr;         
+            curr = temp;   
+        }
+        
+        return prev;
+        
+    }
+    
+    public static void main(String[] args)
+    {
+        /* Linked List creation */
+        LinkedList llist = new LinkedList();
+        llist.head = new Node(3);
+        Node n2 = new Node(2);
+        Node n3 = new Node(1);
+        Node n4 = new Node(6);
+        Node n5 = new Node(5);
+        Node n6 = new Node(4);
+        llist.head.next = n2;
+        n2.next = n3;
+        n3.next = n4;
+        n4.next = n5;
+        n5.next = n6;
+        
+        /* Before */
+        System.out.println("Before\n");
+        llist.print_nodes();
+        
+        llist.head = reverse(llist.head);
+        
+        /* After */
+        System.out.println("\n After \n");
+        llist.print_nodes();
+    }
+
+}
    
 */
