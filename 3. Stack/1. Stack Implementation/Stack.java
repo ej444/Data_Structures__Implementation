@@ -78,3 +78,29 @@ public class Stack
         s.pop();
     } 
 }
+
+
+/* OUTPUT
+
+Adding elements (1 then 2) in the stack
+Current stack
+
+2
+1
+
+Deleting top element
+Current stack
+
+1
+
+Adding elements (3 then 4) in the stack
+
+4
+3
+1
+
+4 consecutive pops
+
+Stack Underflow
+
+*/
