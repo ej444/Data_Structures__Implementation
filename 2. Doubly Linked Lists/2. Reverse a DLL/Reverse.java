@@ -15,25 +15,21 @@ public class Reverse extends DLinkedList
         System.out.println("DLL before reverseing\n");
         dll.print_nodes();
 
-        Node temp;
-        Node ptr = dll.head.next;
+        Node temp = null;
+        Node ptr = dll.head;
 
-        while(ptr.next != null)
+        while(ptr != null)
         {
-            temp = ptr.next;
-            ptr.next = ptr.prev;
-            ptr.prev = temp;
+            temp = ptr.prev;
+            ptr.prev = ptr.next;
+            ptr.next = temp;
             ptr = ptr.prev;
         }
 
-        dll.head.next.next = dll.head;
-        dll.head.next = null;
-        ptr.next = ptr.prev;
-        ptr.prev = null;
-        dll.head = ptr;
-
+        dll.head = temp.prev;
+        
         // DLL after reversing
-        System.out.println("\nDLL after reverseing\n");
+        System.out.println("\nDLL after reversing\n");
         dll.print_nodes();
 
     }
