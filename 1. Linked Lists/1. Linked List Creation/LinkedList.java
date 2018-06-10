@@ -2,7 +2,7 @@ public class LinkedList
 {
     Node head;
 
-    /* Inner class is made static so that main() can access it */
+    /* Inner class is made static so that the main() can access it */
     static class Node
     {
         int data;
