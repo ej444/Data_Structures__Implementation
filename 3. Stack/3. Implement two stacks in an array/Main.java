@@ -86,17 +86,17 @@ public class Main
 		System.out.println("\nPushing 1,2 in stack1 & popping\n");
 		s.push1(1);
 		s.print();
-		s.push2(2);
+		s.push1(2);
 		s.print();
 		s.pop1();
 		s.print();
 
 		System.out.println("\nPushing 10,9 in stack2 & popping\n");
-		s.push1(1);
+		s.push2(10);
 		s.print();
-		s.push2(2);
+		s.push2(9);
 		s.print();
-		s.pop1();
+		s.pop2();
 		s.print();
 
 		System.out.println("\nAdding 9,8,7 in stack2\n");
