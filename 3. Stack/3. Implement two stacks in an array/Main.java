@@ -1,3 +1,5 @@
+// 0 means the the node is empty
+
 public class Main
 {
 	public static class Stack
@@ -50,6 +52,7 @@ public class Main
 			}
 			else
 			{
+				arr[top] = 0;
 				--top1;
 			}
 		}
@@ -63,6 +66,7 @@ public class Main
 			}
 			else
 			{
+				arr[top] = 0;
 				++top2;
 			}
 		}
@@ -85,7 +89,6 @@ public class Main
 
 		System.out.println("\nPushing 1,2 in stack1 & popping\n");
 		s.push1(1);
-		s.print();
 		s.push1(2);
 		s.print();
 		s.pop1();
@@ -93,7 +96,6 @@ public class Main
 
 		System.out.println("\nPushing 10,9 in stack2 & popping\n");
 		s.push2(10);
-		s.print();
 		s.push2(9);
 		s.print();
 		s.pop2();
@@ -103,10 +105,14 @@ public class Main
 	    s.push2(9);
 	    s.push2(8);
 	    s.push2(7);
-
+	    s.push2(6);
+	    s.push2(5)
+	    s.push2(4);
+	    s.push1(2);
+	    s.push1(3);
 	    s.print();
 
-	    System.out.println("\nAdding 15 to stack 1\n");
+	    System.out.println("\nStack is full, Adding 15 to stack 1\n");
 	    s.push1(15);
 	}
 }
