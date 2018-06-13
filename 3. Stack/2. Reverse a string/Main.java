@@ -18,7 +18,7 @@ public class Main extends Stack
 		Stack s = new Stack();
 
 		/* Convert string to char array >> str.toCharArray()
-		    Convert char array to string >> */
+		    Convert char array to string >> String.valueOf(charArr)*/
 
 		char[] myCharArr = str.toCharArray();
 		int i = 0;
