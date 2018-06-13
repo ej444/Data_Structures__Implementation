@@ -101,7 +101,7 @@ public class Main
 		s.pop2();
 		s.print();
 
-		System.out.println("\nAdding 9,8,7 in stack2\n");
+		System.out.println("\nAdding 9,8,7,6,5,4,3,2,1 in stack 1 & stack2\n");
 	    s.push2(9);
 	    s.push2(8);
 	    s.push2(7);
@@ -112,7 +112,7 @@ public class Main
 	    s.push1(3);
 	    s.print();
 
-	    System.out.println("\nStack is full, Adding 15 to stack 1\n");
+	    System.out.printf("\nAfter the stack is full, adding 15 to stack 1: \n");
 	    s.push1(15);
 	}
 }
