@@ -83,7 +83,7 @@ public class Main
 	{
 		Stack s = new Stack(10);
 
-		System.out.println("\n Pushing 1,2 in stack1 & popping");
+		System.out.println("\n Pushing 1,2 in stack1 & popping\n");
 		s.push1(1);
 		s.print();
 		s.push2(2);
@@ -91,7 +91,7 @@ public class Main
 		s.pop1();
 		s.print();
 
-		System.out.println("\n Pushing 10,9 in stack2 & popping");
+		System.out.println("\n Pushing 10,9 in stack2 & popping\n");
 		s.push1(1);
 		s.print();
 		s.push2(2);
@@ -99,17 +99,14 @@ public class Main
 		s.pop1();
 		s.print();
 
-		System.out.println("\nAdding 9,8,7 in stack2");
+		System.out.println("\nAdding 9,8,7 in stack2\n");
 	    s.push2(9);
 	    s.push2(8);
 	    s.push2(7);
 
 	    s.print();
 
-	    System.out.println("Overflow case");
-	    s.push1(999);
-
-
-
+	    System.out.println("Adding 15 to stack 1\n");
+	    s.push1(15);
 	}
 }
