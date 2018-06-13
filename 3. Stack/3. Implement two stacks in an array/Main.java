@@ -83,7 +83,7 @@ public class Main
 	{
 		Stack s = new Stack(10);
 
-		System.out.println("\n Pushing 1,2 in stack1 & popping\n");
+		System.out.println("\nPushing 1,2 in stack1 & popping\n");
 		s.push1(1);
 		s.print();
 		s.push2(2);
@@ -91,7 +91,7 @@ public class Main
 		s.pop1();
 		s.print();
 
-		System.out.println("\n Pushing 10,9 in stack2 & popping\n");
+		System.out.println("\nPushing 10,9 in stack2 & popping\n");
 		s.push1(1);
 		s.print();
 		s.push2(2);
@@ -106,7 +106,7 @@ public class Main
 
 	    s.print();
 
-	    System.out.println("Adding 15 to stack 1\n");
+	    System.out.println("\nAdding 15 to stack 1\n");
 	    s.push1(15);
 	}
 }
