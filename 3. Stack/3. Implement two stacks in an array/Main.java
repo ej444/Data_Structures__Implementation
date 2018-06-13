@@ -112,7 +112,28 @@ public class Main
 	    s.push1(3);
 	    s.print();
 
-	    System.out.printf("\nAfter the stack is full, adding 15 to stack 1: \n");
+	    System.out.printf("\nAfter the stack is full, adding 15 to stack 1: ");
 	    s.push1(15);
 	}
 }
+
+
+/* OUTPUT
+
+Pushing 1,2 in stack1 & popping
+
+The updated array is : 1 2 0 0 0 0 0 0 0 0
+The updated array is : 1 0 0 0 0 0 0 0 0 0
+
+Pushing 10,9 in stack2 & popping
+
+The updated array is : 1 0 0 0 0 0 0 0 9 10
+The updated array is : 1 0 0 0 0 0 0 0 0 10
+
+Adding 9,8,7,6,5,4,3,2,1 in stack 1 & stack2
+
+The updated array is : 1 2 3 4 5 6 7 8 9 10
+
+After the stack is full, adding 15 to stack 1: Data Overflow
+
+*/
