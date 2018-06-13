@@ -52,7 +52,7 @@ public class Main
 			}
 			else
 			{
-				arr[top] = 0;
+				arr[top1] = 0;
 				--top1;
 			}
 		}
@@ -66,7 +66,7 @@ public class Main
 			}
 			else
 			{
-				arr[top] = 0;
+				arr[top2] = 0;
 				++top2;
 			}
 		}
@@ -106,7 +106,7 @@ public class Main
 	    s.push2(8);
 	    s.push2(7);
 	    s.push2(6);
-	    s.push2(5)
+	    s.push2(5);
 	    s.push2(4);
 	    s.push1(2);
 	    s.push1(3);
