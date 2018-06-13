@@ -1,6 +1,4 @@
-import java.io.*;
-
-public class Main extends Stack
+public class Main
 {
 	public static void main(String[] args)
 	{
@@ -11,7 +9,7 @@ public class Main extends Stack
 
 	void printNGE(int[] arr, int n)
 	{
-		
+
 	}
 	
 }
