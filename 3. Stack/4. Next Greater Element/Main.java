@@ -2,7 +2,7 @@ public class Main
 {
 	public static void main(String[] args)
 	{
-		int[] arr = {4, 5, 2, 25};
+		int[] arr = {4, 2, 3, 7, 2, 25};
 
 		printNGE(arr, arr.length);
 	}
