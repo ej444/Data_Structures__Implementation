@@ -18,20 +18,18 @@ public class Main
 		}
 
 		System.out.println("\nInitial stack with top = "+ s.peek() + ">> " + s);
-		s = reverse(s);
+		reverse(s);
 		System.out.println("\nFinal stack with top = "+ s.peek() + ">> " + s);
 
 	}
 
-	public static Stack reverse(Stack s)
+	public static void reverse(Stack s)
 	{
 		if(!s.isEmpty())
 		{
 			String str = (String) s.pop();
-			s = reverse(s);
+			reverse(s);
 			s.push(str);
-			return s;
 		}
-		return s;
 	}
 }
