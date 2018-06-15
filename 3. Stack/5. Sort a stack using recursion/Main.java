@@ -17,9 +17,9 @@ public class Main
 			return;
 		}
 
-		System.out.println("\nStack before sorting with top = "+ s.peek() + ">> " + s);
+		System.out.println("\nStack before sorting with top = "+ s.peek() + " >> " + s);
 		sort();
-		System.out.println("\nStack after sorting with top = "+ s.peek() + ">> " + s);
+		System.out.println("\nStack after sorting with top = "+ s.peek() + " >> " + s);
 
 	}
 
@@ -51,3 +51,12 @@ public class Main
 		}
 	}
 }
+
+
+/* OUTPUT
+
+Stack before sorting with top = 4 >> [1, 2, -3, 4]
+
+Stack after sorting with top = -3 >> [4, 2, 1, -3]
+
+*/
