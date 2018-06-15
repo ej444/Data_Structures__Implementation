@@ -6,10 +6,10 @@ public class Main
 	{
 		Stack<String> s = new Stack<>();
 		Stack<String> temp = new Stack<>();
-		s.push('1');
-		s.push('2');
-		s.push('3');
-		s.push('4');
+		s.push("1");
+		s.push("2");
+		s.push("3");
+		s.push("4");
 
 		if(s.isEmpty())
 		{
