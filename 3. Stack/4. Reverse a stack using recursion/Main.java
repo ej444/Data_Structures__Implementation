@@ -5,50 +5,34 @@ public class Main
 	public static void main(String[] args)
 	{
 		Stack<String> s = new Stack<>();
-		Stack<StringIndexOutOfBoundsException> temp = new Stack<>();
-		s.push("1");
-		s.push("2");
-		s.push("3");
-		s.push("4");
+		Stack<String> temp = new Stack<>();
+		s.push('1');
+		s.push('2');
+		s.push('3');
+		s.push('4');
 
-		System.out.println("Initial stack: " + s);
+		if(s.isEmpty())
+		{
+			System.out.println("Empty stack");
+			return;
+		}
 
-		/* 
-		flag = 0 >> pop elements and save in array
-		flag = 1 >> push the elements of the array back to the stack
-		*/ 
-		int flag = 0;
-
-		reverse(s, flag, temp);
-		System.out.println("\nFinal stack: " + s);
+		System.out.println("\nInitial stack with top = "+ s.peek() + ">> " + s);
+		s = reverse(s, temp);
+		System.out.println("\nFinal stack with top = "+ s.peek() + ">> " + s);
 
 	}
 
-	public static void reverse(Stack s, int flag, Stack temp)
+	public static Stack reverse(Stack s, Stack temp)
 	{
-		if(flag == 0)
+		if(!s.isEmpty())
 		{
-			if(s.isEmpty())
-			{
-				flag = 1;
-				reverse(s, flag, temp);
-			}
-			else
-			{
-				temp.push(s.pop());
-				reverse(s, flag, temp);
-			}
+			temp.push(s.pop());
+			return reverse(s, temp);
 		}
-
-		else if(flag == 1)
+		else
 		{
-			if(temp.isEmpty())
-			{
-				s.push(temp.pop());
-				reverse(s, flag, temp);
-			}
-			return;
+			return temp;
 		}
-		return;
 	}
 }
