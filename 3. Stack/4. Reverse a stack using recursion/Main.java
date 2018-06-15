@@ -37,6 +37,7 @@ public class Main
 
 	}
 
+
 	// Function to go at the bottom of the stack
 	public static void reverse()
 	{
@@ -65,6 +66,5 @@ public class Main
 			insert_at_bottom(str);
 			s.push(temp);
 		}
-
 	}
 }
