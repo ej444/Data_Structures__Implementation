@@ -8,7 +8,7 @@ public class Main
 	{
 		s.push(1);
 		s.push(2);
-		s.push(3);
+		s.push(-3);
 		s.push(4);
 
 		if(s.isEmpty())
@@ -17,9 +17,9 @@ public class Main
 			return;
 		}
 
-		System.out.println("\nInitial stack with top = "+ s.peek() + ">> " + s);
+		System.out.println("\nStack before sorting with top = "+ s.peek() + ">> " + s);
 		sort();
-		System.out.println("\nFinal stack with top = "+ s.peek() + ">> " + s);
+		System.out.println("\nStack after sorting with top = "+ s.peek() + ">> " + s);
 
 	}
 
@@ -36,17 +36,15 @@ public class Main
     // If the number is bigger than
 	public static void insert_below(int num)
 	{
-		if(s.isEmpty())
+		if(s.isEmpty() || num < s.peek())
 		{
 			s.push(num);
 		}
 		else if(num > s.peek())
 		{
+			int t = s.pop();
 			insert_below(num);
-		}
-		else if(num < s.peek())
-		{
-			s.push(num);
+			s.push(t);
 		}
 	}
 }
