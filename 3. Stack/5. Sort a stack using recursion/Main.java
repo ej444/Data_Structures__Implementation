@@ -23,6 +23,7 @@ public class Main
 
 	}
 
+	// Function for popping elements till the end and supplying those popped elements
 	public static void sort()
 	{
 		if(!s.isEmpty())
@@ -33,7 +34,9 @@ public class Main
 		}
 	}
 
-    // If the number is bigger than
+    /* Function to sort: compares popped element with existing elements of stack, if it is smaller then just push
+       it otherwise keep searching for the number smaller than it. If found, insert below that number. */
+
 	public static void insert_below(int num)
 	{
 		if(s.isEmpty() || num < s.peek())
