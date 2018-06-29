@@ -26,15 +26,18 @@ public class BT
 		{
 			return;
 		}
+		else if(current.left == null && current.right == null)
+		{
+			System.out.printf("%d > ", current.key);
+			return;
+		}
 
 		printInorder(current.left);
 		System.out.printf("%d > ", current.key);
-
 		printInorder(current.right);
 
-		System.out.printf("%d > ", current.key);
-
 	}
+
 
 	// Function to print the nodes during Pre order traversal
 	public static void printPreorder(Node current)
@@ -43,14 +46,15 @@ public class BT
 		{
 			return;
 		}
+		else if(current.left == null && current.right == null)
+		{
+			System.out.printf("%d > ", current.key);
+			return;
+		}
 
 		System.out.printf("%d > ", current.key);
-
-		printInorder(current.left);
-		System.out.printf("%d > ", current.left.key);
-
+        	printInorder(current.left);
 		printInorder(current.right);
-		System.out.printf("%d > ", current.right.key);
 
 	}
 
@@ -61,13 +65,15 @@ public class BT
 		{
 			return;
 		}
+		else if(current.left == null && current.right == null)
+		{
+			System.out.printf("%d > ", current.key);
+			return;
+		}
 
 		printInorder(current.left);
-		System.out.printf("%d > ", current.left.key);
-
 		printInorder(current.right);
-		System.out.printf("%d > ", current.right.key);
-
 		System.out.printf("%d > ", current.key);
+
 	}
 }
