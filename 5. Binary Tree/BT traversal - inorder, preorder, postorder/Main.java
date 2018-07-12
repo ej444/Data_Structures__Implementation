@@ -11,7 +11,7 @@ public class Main extends BT
 		b.root.left.left = new Node(4);
 		b.root.left.right = new Node(5);
 
-		System.out.print("Three types of level first traversals:\n");
+		System.out.print("Three types of depth first traversals:\n");
 		System.out.print("\nInorder traversal: ");
 		printInorder(b.root);
 		// Backspace does not delete the content, it just shifts the cursor to the left and then the content can be cleared by adding spaces
