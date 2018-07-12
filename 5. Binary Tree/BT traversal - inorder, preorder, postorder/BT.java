@@ -26,11 +26,6 @@ public class BT
 		{
 			return;
 		}
-		else if(current.left == null && current.right == null)
-		{
-			System.out.printf("%d > ", current.key);
-			return;
-		}
 
 		printInorder(current.left);
 		System.out.printf("%d > ", current.key);
@@ -46,15 +41,11 @@ public class BT
 		{
 			return;
 		}
-		else if(current.left == null && current.right == null)
-		{
-			System.out.printf("%d > ", current.key);
-			return;
-		}
 
 		System.out.printf("%d > ", current.key);
-        	printInorder(current.left);
-		printInorder(current.right);
+
+        printPreorder(current.left);
+		printPreorder(current.right);
 
 	}
 
@@ -65,14 +56,9 @@ public class BT
 		{
 			return;
 		}
-		else if(current.left == null && current.right == null)
-		{
-			System.out.printf("%d > ", current.key);
-			return;
-		}
 
-		printInorder(current.left);
-		printInorder(current.right);
+		printPostorder(current.left);
+		printPostorder(current.right);
 		System.out.printf("%d > ", current.key);
 
 	}
