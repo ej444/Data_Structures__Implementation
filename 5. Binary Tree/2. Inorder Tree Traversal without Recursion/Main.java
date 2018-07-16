@@ -22,29 +22,20 @@ public class Main extends BT{
 
 		System.out.print("\n\nWithout recursion: ");
 		Stack<Node> s = new Stack<>();
-		s.push(b.root);
 		Node curr = b.root;
 
-		while(curr != null && !s.isEmpty()){
+		while(curr != null || !s.isEmpty()){
 
 			// Traverses and fills the stack with left children
-			while(curr.left != null){
-				s.push(curr.left);
+			while(curr != null){
+				s.push(curr);
 				curr = curr.left;
 			}
 
-			// Pops and prints the elements till the stack is empty
-			while(!s.isEmpty()){
-				curr = s.pop();
-				System.out.print(curr.key + " > ");
-
-				// If right child present, push it and make curr equal to it
-				if(curr.right != null){
-					s.push(curr.right);
-					curr = curr.right;
-					break;
-				}
-			}
+			// Pops and prints the elements
+			curr = s.pop();
+			System.out.print(curr.key + " > ");
+			curr = curr.right;
 		}
 
 		System.out.println("\b\b ");
