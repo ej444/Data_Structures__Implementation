@@ -13,7 +13,7 @@ public class Main extends BT{
                 tree.root.left.right.left = new Node(7);
 
                 int target = 7;
-                dfs(tree.root, target);   
+                dfs(tree.root, target);
         }
 
         public static void dfs(Node n, int target){
