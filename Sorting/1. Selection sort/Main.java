@@ -14,6 +14,7 @@ public class Main
 	public static void main(String[] args)
 	{
 		int[] arr = {50, 40, 30, 20, 10};
+		printArray(arr);
 		selectionSort(arr, arr.length);
 		printArray(arr);
 	}
@@ -24,18 +25,17 @@ public class Main
 		int min, min_index = 0, temp;
 		for(int i=0; i<size-1; i++)
 		{
-			for(int j=i; j<size; j++)
+			for(int j=i+1; j<size; j++)
 			{
-				min = arr[i];
-				if(min > arr[j])
+				min_index = i;
+				if(arr[i] > arr[j])
 				{
-					min = arr[j];
 					min_index = j;
 				}
 			}
 
 			temp = arr[i];
-			arr[i] = min;
+			arr[i] = arr[min_index];
 			arr[min_index] = temp;
 		}
 	}
@@ -46,5 +46,6 @@ public class Main
 		{
 			System.out.printf("%d ", i);
 		}
+		System.out.println();
 	}
 }
