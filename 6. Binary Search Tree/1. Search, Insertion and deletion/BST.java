@@ -57,4 +57,33 @@ public class BST
 			inOrderPrintBST(curr.right);
 		}
 	}
+
+	public static void delete(int d)
+	{
+		root = deleteNode(root, d);
+	}
+
+	public static Node deleteNode(Node curr, int d)
+	{
+		if(curr == null)
+		{
+			return curr;
+		}
+
+		if(curr.key < d)
+		{
+			curr.
+		}
+	}
 }
+
+
+
+
+
+
+
+
+
+
+
