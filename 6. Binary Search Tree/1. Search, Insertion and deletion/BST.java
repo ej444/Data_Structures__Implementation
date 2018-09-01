@@ -72,11 +72,11 @@ public class BST
 
 		if(curr.key < d)
 		{
-			curr.left = deleteNode(curr.left, d);
+			curr.right = deleteNode(curr.right, d);
 		}
 		else if(curr.key > d)
 		{
-			curr.right = deleteNode(curr.right, d);
+			curr.left = deleteNode(curr.left, d);
 		}
 
 		// Node to be deleted found
@@ -95,11 +95,12 @@ public class BST
 				return curr.left;
 			}
 
-			// If the node to be deleted has 2 children
-			else
-			{
-				int 
-			}
+			// If the node to be deleted has 2 children, find the value of inorder successor and assign it to
+			// current node value.
+			curr.key = findInorderSuccessor(curr.right, curr.key);
+
+			// Deleting the orignal next 
+			curr = deleteNode(curr.right, curr.key);
 		}
 	}
 }
