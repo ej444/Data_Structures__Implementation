@@ -72,7 +72,34 @@ public class BST
 
 		if(curr.key < d)
 		{
-			curr.
+			curr.left = deleteNode(curr.left, d);
+		}
+		else if(curr.key > d)
+		{
+			curr.right = deleteNode(curr.right, d);
+		}
+
+		// Node to be deleted found
+		else
+		{
+			// If the node to be deleted has one/no children
+			// Left node is present
+			if(curr.left == null)
+			{
+				return curr.right;
+			}
+
+			// Right node is present
+			else if(curr.right == null)
+			{
+				return curr.left;
+			}
+
+			// If the node to be deleted has 2 children
+			else
+			{
+				int 
+			}
 		}
 	}
 }
