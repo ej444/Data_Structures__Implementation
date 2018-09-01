@@ -23,38 +23,44 @@ public class BST
 		root = addNode(root, d);
 	}
 
-	public static Node addNode(Node curr, int d)
+	public static Node addNode(Node root, int d)
 	{
 		// If the tree is empty, create a new node and assign it the value d
-		if(curr == null)
+		if(root == null)
 		{
-			curr = new Node(d);
-			return curr;
+			root = new Node(d);
+			return root;
 		}
 
-		// If the value to be insertes is less than the current node value
-		if(d < curr.key)
+		// If the value to be insertes is less than the rootent node value
+		if(d < root.key)
 		{
-			curr.left = addNode(curr.left, d);
+			root.left = addNode(root.left, d);
 		}
 
-		// If the value to be insertes is more than the current node value
-		if(d > curr.key)
+		// If the value to be insertes is more than the rootent node value
+		if(d > root.key)
 		{
-			curr.right = addNode(curr.right, d);
+			root.right = addNode(root.right, d);
 		}
 
 		// Other cases
-		return curr;
+		return root;
 	}
 
-	public static void inOrderPrintBST(Node curr)
+
+	public static void print(Node root)
 	{
-		if(curr != null)
+		inOrderPrintBST(root);
+	}
+
+	public static void inOrderPrintBST(Node root)
+	{
+		if(root != null)
 		{
-			inOrderPrintBST(curr.left);
-			System.out.println(curr.key);
-			inOrderPrintBST(curr.right);
+			inOrderPrintBST(root.left);
+			System.out.println(root.key);
+			inOrderPrintBST(root.right);
 		}
 	}
 
@@ -63,20 +69,20 @@ public class BST
 		root = deleteNode(root, d);
 	}
 
-	public static Node deleteNode(Node curr, int d)
+	public static Node deleteNode(Node root, int d)
 	{
-		if(curr == null)
+		if(root == null)
 		{
-			return curr;
+			return root;
 		}
 
-		if(curr.key < d)
+		if(root.key < d)
 		{
-			curr.right = deleteNode(curr.right, d);
+			root.right = deleteNode(root.right, d);
 		}
-		else if(curr.key > d)
+		else if(root.key > d)
 		{
-			curr.left = deleteNode(curr.left, d);
+			root.left = deleteNode(root.left, d);
 		}
 
 		// Node to be deleted found
@@ -84,24 +90,38 @@ public class BST
 		{
 			// If the node to be deleted has one/no children
 			// Left node is present
-			if(curr.left == null)
+			if(root.left == null)
 			{
-				return curr.right;
+				return root.right;
 			}
 
 			// Right node is present
-			else if(curr.right == null)
+			else if(root.right == null)
 			{
-				return curr.left;
+				return root.left;
 			}
 
 			// If the node to be deleted has 2 children, find the value of inorder successor and assign it to
-			// current node value.
-			curr.key = findInorderSuccessor(curr.right, curr.key);
+			// rootent node value.
+			root.key = findMinValue(root.right, root.key);
 
-			// Deleting the orignal next 
-			curr = deleteNode(curr.right, curr.key);
+			// Deleting the inorder successor
+			root = deleteNode(root.right, root.key);
 		}
+		return root;
+	}
+
+	// Returns the inorder successor (next big value than the rootent node value)
+	public static int findMinValue(Node root, int d)
+	{
+		int minValue = -1;
+		while(root != null)
+		{
+			minValue = root.key;
+			root = root.left;
+		}
+
+		return minValue;
 	}
 }
 
