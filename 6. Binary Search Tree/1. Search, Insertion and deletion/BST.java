@@ -39,7 +39,7 @@ public class BST
 		}
 
 		// If the value to be insertes is more than the rootent node value
-		if(d > root.key)
+		else if(d > root.key)
 		{
 			root.right = addNode(root.right, d);
 		}
@@ -103,18 +103,18 @@ public class BST
 
 			// If the node to be deleted has 2 children, find the value of inorder successor and assign it to
 			// rootent node value.
-			root.key = findMinValue(root.right, root.key);
+			root.key = findMinValue(root.right);
 
 			// Deleting the inorder successor
-			root = deleteNode(root.right, root.key);
+			root.right = deleteNode(root.right, root.key);
 		}
 		return root;
 	}
 
 	// Returns the inorder successor (next big value than the rootent node value)
-	public static int findMinValue(Node root, int d)
+	public static int findMinValue(Node root)
 	{
-		int minValue = -1;
+		int minValue = root.key;
 		while(root != null)
 		{
 			minValue = root.key;
