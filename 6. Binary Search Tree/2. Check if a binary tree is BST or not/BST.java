@@ -151,6 +151,7 @@ public class BST
 			return false;
 		}
 
+		// For left subtree, it tightens the upper limit and for right subtree it tightens the lower limit
 		return checkBST(root.left, min, root.key - 1) && checkBST(root.right, root.key + 1, max);
 	}
 }
