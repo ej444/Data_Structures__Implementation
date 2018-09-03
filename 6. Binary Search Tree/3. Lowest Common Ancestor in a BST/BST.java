@@ -20,12 +20,7 @@ public class BST
 
 	public static int LCA(Node root, int n1, int n2)
 	{
-		if(root.key >= n1 && root.key <= n2)
-		{
-			return root.key;
-		}
-		
-		else if(root.key > n2 && root.left != null)
+		if(root.key > n2 && root.left != null)
 		{
 			return LCA(root.left, n1, n2);
 		}
@@ -35,6 +30,7 @@ public class BST
 			return LCA(root.right, n1, n2);
 		}
 
-		return 0;
+		// If the value of root in within the range, it is the LCA
+		return root.key;
 	}
 }

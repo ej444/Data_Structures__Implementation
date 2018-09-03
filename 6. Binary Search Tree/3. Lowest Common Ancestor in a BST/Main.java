@@ -11,6 +11,6 @@ public class Main extends BST
     bst.root.left.right.left = new Node(10);
     bst.root.left.right.right = new Node(14);
 
-    findLCA(bst.root, 11, 22);
+    findLCA(bst.root, 14, 8);
 	}
 }
