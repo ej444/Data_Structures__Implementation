@@ -2,7 +2,7 @@ public class CountingSort
 {
 	public static void main(String[] args)
 	{
-		int[] arr = [5,4,1,4,3,2,1];
+		int[] arr = {5,4,1,4,3,2,1};
 		print(arr);
 		sort(arr);
 		print(arr);
@@ -16,7 +16,7 @@ public class CountingSort
 			c[i] = 0;
 
 		// Array in which the new sorted values will be inserted
-		int[] b = new int[a.length]
+		int[] b = new int[a.length];
 
 		// c array stores the counts of occurance of each element
 		for(int i=0; i<a.length; i++)
@@ -40,6 +40,10 @@ public class CountingSort
 	public static void print(int[] arr)
 	{
     for (int i=0; i<arr.length; ++i) 
+    {
       System.out.print(arr[i]);
+    	System.out.print(" ");
+    }
+    System.out.println();
 	}
 }
